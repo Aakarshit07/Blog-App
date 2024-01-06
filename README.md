@@ -1,4 +1,4 @@
-# LMS Frontend
+# Blog App
 
 ### Setup instruction
 
