@@ -1,5 +1,4 @@
-# [Blog App](https://blog-app-aakarshit.vercel.app/)
-
+# [Blog App](https://blog-app-aakarshit.vercel.app/) [Live](https://blog-app-aakarshit.vercel.app/)
 ### Setup instruction
 
 1. Clone the Project
