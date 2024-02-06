@@ -93,7 +93,7 @@ export default function PostForm({ post }) {
     }, [watch, slugTransform, setValue])
 
   return (
-    <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
+    <form onSubmit={handleSubmit(submit)} className="flex flex-wrap flex-col items-center md:flex-row sm:items-start sm:flex-row">
         <div className="w-2/3 px-2">
             <Input
                 label="Title :"
@@ -111,7 +111,7 @@ export default function PostForm({ post }) {
             <p className=" text-amber-600 mt-0 mb-2 text-left">*Slug can be of at most 36 characters.*</p>
             <RTE label="Content :" name="content" control={control} defaultValue={getValues("content")} />
         </div>
-        <div className="w-1/3 px-2">
+        <div className="w-1/3 p-2">
             <Input
                 label="Featured Image :"
                 type="file"
@@ -131,7 +131,7 @@ export default function PostForm({ post }) {
             <Select
                 options={["active", "inactive"]}
                 label="Status"
-                className="mb-4"
+                className="mb-4 w-full"
                 {...register("status", { required: true })}
             />
             <Button type="submit" 
