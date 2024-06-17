@@ -10,7 +10,6 @@ function LogoutBtn() {
             dispatch(logout())
         })
         // .catch((error) => console.log("Something Went Wrong While fetching current user: ", error.message));
-
     }
 
     return (

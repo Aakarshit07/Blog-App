@@ -13,12 +13,11 @@ function Signup() {
     const [error, setError] = useState("");
     const  { register, handleSubmit } = useForm();
 
-
     //user account creating
     const create = async (data) => {
         setError("")
         try {
-            const userData =  await authService.createAccount(data);
+            const userData = await authService.createAccount(data);
             if(userData) {
                 const userData = await authService.getCurrentUser();
                 if(userData) dispatch(login(userData));
@@ -26,7 +25,6 @@ function Signup() {
             }
 
         } catch (error) {
-            // console.log("Something went Wrong while signup", error.message)
             setError(error.message);
         }
     }

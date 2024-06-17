@@ -1,5 +1,5 @@
 
-import React, { useCallback, useState } from 'react'
+import React, { useCallback } from 'react'
 import { useForm } from "react-hook-form"
 import { Button, Input, Select, RTE } from "../index"
 import appwriteService from "../../appwrite/config";
@@ -17,7 +17,6 @@ export default function PostForm({ post }) {
         },
     })
 
-
     const navigate = useNavigate();
     const userData = useSelector((state) => state.auth.userData);
 
@@ -27,7 +26,6 @@ export default function PostForm({ post }) {
     } 
 
     const submit = async (data) => {
-        // console.log(data)
         if(post) {
             const file = data.image && data.image[0] ?
             await appwriteService.uploadFile(data.image[0]) 
@@ -52,7 +50,7 @@ export default function PostForm({ post }) {
             : null;
             
             if(file) {
-                const fileId = file.$id
+                const fileId = file.$id;
                 data.featuredImage = fileId;
             }
 
@@ -79,7 +77,7 @@ export default function PostForm({ post }) {
             return trimmedSlug.substring(0, 36);
         }
         return "";    
-    }, [])
+    }, []);
 
     React.useEffect(() => {
         const subscription = watch((value, { name }) => {
@@ -129,7 +127,7 @@ export default function PostForm({ post }) {
                 </div>
             )}
             <Select
-                options={["active", "inactive"]}
+                options={["Active", "Inactive"]}
                 label="Status"
                 className="mb-4 w-full"
                 {...register("status", { required: true })}
